@@ -1,0 +1,20 @@
+body{background-image:url("../images/movMonkei.jpg");color:black;font-family:Sans-serif;}
+#container{width:80%;margin:auto;}
+#header{width:100%;}
+#logo{float:left;background-color:black;color:white;width:30%;padding-left:5%;font-family:"Arial Black", Gadget, sans-serif;}
+#loginbox{float:right;font-size:75%;}
+#loginbox input{height:10px;width:50px}
+#navigation{float:left;width:20%;background-size:100% 100%;margin:5px 0 0 5px;background-color:#DADADA;color:black; }
+#navigation ul{list-style-type:none;}
+#main{background:rgba(255,255,255,0.5);margin-top:10px;}
+#maincontainer{margin:auto;padding:5px;text-align:justify;width:50%;}
+#maincontainer table, th, td{border:1px solid black;border-collapse:collapse;background-color:rgba(255,255,255,0.5);}
+#footer{width:100%;margin:auto; font-size:1em} 
+#bottomlinks{width:30%;margin:auto;font-size:0.75em}
+#soclinks {margin:5px;}
+label{float:left;width:90px;text-align:right;}
+.item{border:2px solid white;background:rgba(255,255,255,0.5);}
+a:link {color: black;text-decoration: underline;}/* unvisited link */
+a:visited {color: black;text-decoration:underline;}/* visited link */
+a:hover {color: white;text-decoration:underline;background-color: #000000;}/* mouse over link */
+a:active {color: black;text-decoration:underline;background-color: white;}/* selected link */
