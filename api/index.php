@@ -36,7 +36,25 @@ function regNew() {
 function grabamember() {
 	$email = $_POST['email'];
 	$pword = $_POST['password'];
-	echo json_encode(array("Email"=>$email,"Password"=>$pword));
+	$sql = "SELECT * FROM members WHERE (email=:email)";
+	$conn = dbconnect();
+	try {
+		$stmt = $conn->prepare($sql);
+		$stmt->bindParam("email", $email);
+		$stmt->execute();
+		$row = $stmt->fetchAll(PDO::FETCH_OBJ);
+		echo json_encode($row, JSON_FORCE_OBJECT);
+		/*if ($stmt->rowCount() > 0) {
+			$user = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+			echo json_encode($user);
+			foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
+				echo $v;
+			}	
+		}*/
+	} catch(PDOException $e) {
+		echo "Connection failed: " . $e->getMessage();
+	}
+	//echo json_encode(array("Email"=>$email,"Password"=>$pword));
 }
 
 function dbconnect() {

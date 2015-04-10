@@ -20,15 +20,15 @@ function register(){
 
 function logmein(){
 	var logindeets = $('#loginform').serialize();
-	var myurl = "api/getmember";
+	var myurl = "/movement/api/getmember";
 	$.ajax({
 		url: myurl,
 		type: 'POST',
 		data: logindeets,
 		datatype: 'json',
-		success: function(reply){
-			alert(reply);
-			//set user in local storage
+		success: function(row){
+			obj = JSON.parse(row);
+			alert("Welcome "+obj[0].fname+" "+obj[0].lname);
 		}
 	});
 }
