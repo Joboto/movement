@@ -14,6 +14,9 @@ function register(){
 		success: function(){
 			alert('Welcome to the tribe!');
 			//redirect to profile page
+		},
+		error: function(data){
+			alert(data);
 		}
 	});
 }
@@ -28,7 +31,14 @@ function logmein(){
 		datatype: 'json',
 		success: function(row){
 			obj = JSON.parse(row);
-			alert("Welcome "+obj[0].fname+" "+obj[0].lname);
+			if(!obj[0]){
+				alert("Could not find, please try again");
+			} else {
+				alert("Welcome "+obj[0].fname+" "+obj[0].lname);
+			}
+		},
+		error: function() {
+			alert("Please try again.");
 		}
 	});
 }

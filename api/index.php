@@ -16,15 +16,17 @@ function regNew() {
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
 	$email = $_POST['email'];
+	$pword = $_POST['password'];
 	$bio = $_POST['bio'];
 	//echo json_encode(array("First"=>$fname,"Last"=>$lname,"email"=>$email,"bio"=>$bio));
-	$sql = "INSERT INTO members (fname, lname, email, bio) VALUES (:fname, :lname, :email, :bio)";
+	$sql = "INSERT INTO members (fname, lname, email, pword, bio) VALUES (:fname, :lname, :email, :pword, :bio)";
 	$conn = dbconnect();
 	try {
 		$stmt = $conn->prepare($sql);
 		$stmt->bindParam("fname", $fname);
 		$stmt->bindParam("lname", $lname);
 		$stmt->bindParam("email", $email);
+		$stmt->bindParam("pword", $pword);
 		$stmt->bindParam("bio", $bio);
 		$stmt->execute();
 	} catch(PDOException $e) {

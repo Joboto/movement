@@ -10,7 +10,7 @@ echo '<div id="loginbox">
 			<div style="float:right">
 				<label name="passwordLabel" style="text-align:left">Password</label>
 				<br>
-				<input id="password" name="password" type="text" style="width:90%" />
+				<input id="password" name="password" type="password" style="width:90%" />
 			</div>
 			<div style="clear:both"></div>
 			<button type="button" style="height:23px" onclick="logmein()">Log in</button>
