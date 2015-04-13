@@ -49,7 +49,15 @@ function logmeout(){
 }
 
 function whologgedon(){
-	var thisone = localStorage.getItem('loggedOn');
-	alert("You are "+(JSON.parse(thisone)).fname);
-	console.log(JSON.parse(thisone));
+	//var saying = localStorage;
+	//alert(saying);
+	if(localStorage.getItem('loggedOn') === null){
+		alert("No-one logged in");
+	} else {
+		var thisone = localStorage.getItem('loggedOn');
+		alert("You are "+(JSON.parse(thisone)).fname);
+		console.log(JSON.parse(thisone));
+		
+	}
+	
 }
