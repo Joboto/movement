@@ -46,6 +46,9 @@ function logmein(){
 
 function logmeout(){
 	localStorage.clear();
+	$.ajax({
+		url: "api/killsession"
+	});
 }
 
 function whologgedon(){
@@ -57,7 +60,21 @@ function whologgedon(){
 		var thisone = localStorage.getItem('loggedOn');
 		alert("You are "+(JSON.parse(thisone)).fname);
 		console.log(JSON.parse(thisone));
-		
+		$('#marker').append("<p>"+(JSON.parse(thisone)).fname+"</p>");
 	}
 	
 }
+
+$(document).ready(function(){
+	if(localStorage.getItem('loggedOn') !== null){
+		var currentuser = localStorage.getItem('loggedOn');
+		var userName = (JSON.parse(currentuser)).username;
+		alert("Passing in "+userName);
+		$.ajax({
+			url: "api/"+userName,
+			success: function(word){
+				alert(word+" is the word");
+			}
+		});
+	}
+});

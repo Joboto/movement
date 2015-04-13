@@ -6,11 +6,23 @@ $app = new \Slim\Slim();
  
 $app->post('/getmember', 'grabamember');
 $app->post('/newmember', 'regNew');
+$app->get('/:userName', 'newSession');
+$app->get('/killsession', 'clearSession');
 $app->put('/put',function () {echo 'This is a PUT route';});
 $app->patch('/patch', function () {echo 'This is a PATCH route';});
 $app->delete('/delete',function () {echo 'This is a DELETE route';});
 
 $app->run();
+
+function newSession($userName){
+	session_start();
+	$_SESSION['UserName'] = $userName;
+	echo $_SESSION['UserName'];
+}
+
+function clearSession(){
+	session_unset();
+}
 
 function regNew() {
 	$fname = $_POST['fname'];
