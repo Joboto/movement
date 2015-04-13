@@ -15,6 +15,7 @@ echo '<div id="loginbox">
 			<div style="clear:both"></div>
 			<button type="button" style="height:23px" onclick="logmein()">Log in</button>
 			<button type="button" style="height:23px" onclick="gotoregpage()">Register</button>
+			<button type="button" style="height:23px" onclick="logmeout()">Log out</button>
 		</form>
 	</div>';
 ?>

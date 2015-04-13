@@ -14,7 +14,7 @@
 			<h1>MOVEMENT</h1>
 			<h4>Start yours...</h4>
 		</div></a>
-	<?php include '../includes/login.php';?>
+	<!--<?php include '../includes/login.php';?>-->
 	</div>
 	<div style="clear:both"></div>
 	<div id="main">
@@ -28,7 +28,7 @@
 				<label for="email" style="width:25%;text-align:left;">Email address</label><br>
 				<input type="email" name="email" id="email" required/><br>
 				<label for="password" style="width:25%;text-align:left;">Create password</label><br>
-				<input type="password" name="password" id="password" placeholder="Password"/><br>
+				<input type="password" name="password" id="password" placeholder="Password" required/><br>
 				<input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password"/><br>
 				<label for="comments" style="width:50%;text-align:left;">Tell us a little bit about yourself...</label><br>
 				<textarea name="bio" id ="bio" maxlength="1000" cols="50" rows="10"></textarea><br>
