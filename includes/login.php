@@ -1,6 +1,6 @@
 <?php 
 if(session_id() === "") {
-	echo '<div id="loginbox">
+	$output = '<div id="loginbox">
 			<h4 style="margin:0">Login to view your account.</h4>
 			<form id="loginform">
 				<div style="float:left">
@@ -20,9 +20,10 @@ if(session_id() === "") {
 			</form>
 		</div>';
 } else {
-	echo '<div id="loginbox">
+	$output = '<div id="loginbox">
 			<p>You are logged in as'+print_r($_SESSION)+'...</p>
 			<button type="button" style="height:23px" onclick="logmeout()">Log out</button>
 		</div>';
 }
+echo $output;
 ?>
