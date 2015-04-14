@@ -1,3 +1,4 @@
+<div id="topright">
 <div id="loginbox">
 	<h4 style="margin:0">Login to view your account.</h4>
 	<form id="loginform">
@@ -16,8 +17,15 @@
 		<button type="button" style="height:23px" onclick="gotoregpage()">Register</button>
 	</form>
 </div>
-<div id="basketbox">
+<div id="userbox">
 	<h2 style="margin:0">You are logged in as <span id="currentfname"></span></h2>
 	<button type="button" style="height:23px" onclick="logmeout()">Log out</button>
+</div>
+<div id="basketbox">
+	<a href="/movement/basketview.php"><?php 
+session_start();
+if(!isset($_SESSION['basketItems']))
+	echo 'Your basket is empty';
+?></a>
 </div>	
-		
+</div>

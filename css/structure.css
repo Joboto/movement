@@ -2,8 +2,7 @@ body{background-image:url("../images/movMonkei.jpg");color:black;font-family:San
 #container{width:80%;margin:auto;}
 #header{width:100%;}
 #logo{float:left;background-color:black;color:white;width:30%;padding-left:5%;font-family:"Arial Black", Gadget, sans-serif;}
-#loginbox{float:right;font-size:75%;background:rgba(255,255,255,0.5);}
-#basketbox{float:right;font-size:75%;background:rgba(255,255,255,0.5);}
+#topright{float:right;font-size:75%;background:rgba(255,255,255,0.5);}
 #loginbox input{height:10px;width:50px}
 #navigation{float:left;width:20%;background-size:100% 100%;margin:5px 0 0 5px;background-color:#DADADA;color:black; }
 #navigation ul{list-style-type:none;}
