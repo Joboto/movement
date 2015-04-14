@@ -23,9 +23,12 @@
 </div>
 <div id="basketbox">
 	<a href="/movement/basketview.php"><?php 
-session_start();
+//session_start();
 if(!isset($_SESSION['basketItems']))
-	echo 'Your basket is empty';
+	$say = 'Your basket is empty';
+else
+	$say = 'There are ' . $_SESSION['basketItems'] . ' in your basket.';
+echo $say;
 ?></a>
 </div>	
 </div>

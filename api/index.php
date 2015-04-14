@@ -6,15 +6,13 @@ $app = new \Slim\Slim();
  
 $app->post('/getmember', 'grabamember');
 $app->post('/newmember', 'regNew');
-$app->get('/:userName', 'newSession');
-$app->get('/killsession', 'clearSession');
-$app->put('/put',function () {echo 'This is a PUT route';});
-$app->patch('/patch', function () {echo 'This is a PATCH route';});
-$app->delete('/delete',function () {echo 'This is a DELETE route';});
+$app->get('/:product/:price', 'addToBasket');
+//$app->get('/:userName', 'newSession');
+//$app->get('/killsession', 'clearSession');
 
 $app->run();
 
-function newSession($userName){
+/*function newSession($userName){
 	session_start();
 	$_SESSION['UserName'] = $userName;
 	echo $_SESSION['UserName'];
@@ -22,6 +20,14 @@ function newSession($userName){
 
 function clearSession(){
 	session_unset();
+}*/
+
+function addToBasket($product, $price){
+	session_start();
+	$_SESSION['basketItems'] = 1;
+	$_SESSION['product'] = $product;
+	$_SESSION['price'] = $price;
+	echo $_SESSION['product'] . ' cost £' . $_SESSION['price'];
 }
 
 function regNew() {

@@ -31,7 +31,7 @@
 				Width of Straps: 1.5"</p>
 				<img src="../images/ringsThumb.jpg" style="max-width:100%">
 				<p>&pound;55.00</p>
-				<button type="button">Add to Basket</button>
+				<button type="button" onclick="addtobasket('Gymnastic Rings', 55)">Add to Basket</button>
 			</div>
 	</div>
 	<div style="clear:both"></div>
