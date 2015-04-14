@@ -32,7 +32,7 @@ function logmein(){
 		success: function(row){
 			obj = JSON.parse(row);
 			if(!obj[0]){
-				alert("Could not find, please try again");
+				alert("Could not log you on, please try again");
 			} else {
 				alert("Welcome "+obj[0].fname+" "+obj[0].lname);
 				localStorage.setItem('loggedOn', JSON.stringify(obj[0]));
@@ -40,7 +40,7 @@ function logmein(){
 				loginbox.style.display = "none";
 				var basketbox = document.querySelector("#basketbox");
 				basketbox.style.display = "";
-				$("#currentfname").html(name);
+				$("#currentfname").html(obj[0].fname);
 			}
 		},
 		error: function() {

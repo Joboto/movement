@@ -50,11 +50,12 @@ function regNew() {
 function grabamember() {
 	$email = $_POST['email'];
 	$pword = $_POST['password'];
-	$sql = "SELECT * FROM members WHERE (email=:email)";
+	$sql = "SELECT * FROM members WHERE (email=:email && pword=:pword)";
 	$conn = dbconnect();
 	try {
 		$stmt = $conn->prepare($sql);
 		$stmt->bindParam("email", $email);
+		$stmt->bindParam("pword", $pword);
 		$stmt->execute();
 		$row = $stmt->fetchAll(PDO::FETCH_OBJ);
 		echo json_encode($row, JSON_FORCE_OBJECT);
