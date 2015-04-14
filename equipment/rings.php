@@ -11,7 +11,7 @@
 <body>
 <div id="container">
 	<div id="header">
-		<a href="#" id="logo"><div>
+		<a href="/movement" id="logo"><div>
 			<h1>MOVEMENT</h1>
 			<h4>Start yours...</h4>
 		</div></a>

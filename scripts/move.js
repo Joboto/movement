@@ -65,7 +65,7 @@ function whologgedon(){
 	
 }
 
-$(document).ready(function(){
+/*$(document).ready(function(){
 	if(localStorage.getItem('loggedOn') !== null){
 		var currentuser = localStorage.getItem('loggedOn');
 		var userName = (JSON.parse(currentuser)).username;
@@ -77,4 +77,4 @@ $(document).ready(function(){
 			}
 		});
 	}
-});
+});*/
