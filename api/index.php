@@ -58,13 +58,7 @@ function grabamember() {
 		$stmt->execute();
 		$row = $stmt->fetchAll(PDO::FETCH_OBJ);
 		echo json_encode($row, JSON_FORCE_OBJECT);
-		/*if ($stmt->rowCount() > 0) {
-			$user = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-			echo json_encode($user);
-			foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
-				echo $v;
-			}	
-		}*/
+		
 	} catch(PDOException $e) {
 		echo "Connection failed: " . $e->getMessage();
 	}

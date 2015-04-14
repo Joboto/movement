@@ -36,6 +36,11 @@ function logmein(){
 			} else {
 				alert("Welcome "+obj[0].fname+" "+obj[0].lname);
 				localStorage.setItem('loggedOn', JSON.stringify(obj[0]));
+				var loginbox = document.querySelector("#loginbox");
+				loginbox.style.display = "none";
+				var basketbox = document.querySelector("#basketbox");
+				basketbox.style.display = "";
+				$("#currentfname").html(name);
 			}
 		},
 		error: function() {
@@ -46,9 +51,11 @@ function logmein(){
 
 function logmeout(){
 	localStorage.clear();
-	$.ajax({
-		url: "api/killsession"
-	});
+	var loginbox = document.querySelector("#loginbox");
+	loginbox.style.display = "";
+	var basketbox = document.querySelector("#basketbox");
+	basketbox.style.display = "none";
+	alert("You are no longer logged in.");
 }
 
 function whologgedon(){
@@ -65,16 +72,16 @@ function whologgedon(){
 	
 }
 
-/*$(document).ready(function(){
+$(document).ready(function(){
 	if(localStorage.getItem('loggedOn') !== null){
 		var currentuser = localStorage.getItem('loggedOn');
 		var userName = (JSON.parse(currentuser)).username;
-		alert("Passing in "+userName);
-		$.ajax({
-			url: "api/"+userName,
-			success: function(word){
-				alert(word+" is the word");
-			}
-		});
+		var name = (JSON.parse(currentuser)).fname;
+		var loginbox = document.querySelector("#loginbox");
+		loginbox.style.display = "none";
+		$("#currentfname").html(name);
+	} else {
+		var basketbox = document.querySelector("#basketbox");
+		basketbox.style.display = "none";
 	}
-});*/
+})
