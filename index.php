@@ -24,7 +24,6 @@
 	<div id="main">
 		<?php include '/includes/navigation.php';?>
 		<div id="maincontainer">
-			<button type="button" onclick="whologgedon()">Check localStorage</button>
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/Su0vLwyQTTI" frameborder="0" allowfullscreen></iframe>
 			<p>Here you will find everything you need to get moving! From parkour to gymnastic strength to the subtleties of the Feldenkrais method.
 			Check out our <a href="courses">courses</a> page to see what's available and get started! <br>For an overview of our philosophy and approach, 

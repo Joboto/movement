@@ -18,6 +18,6 @@
 	</form>
 </div>
 <div id="userbox">
-	<h2 style="margin:0">You are logged in as <span id="currentfname"></span></h2>
+	<h3 style="margin:0">You are logged in as <span id="currentfname"></span></h3>
 	<button type="button" style="height:23px" onclick="logmeout()">Log out</button>
 </div>
