@@ -24,10 +24,13 @@ function clearSession(){
 
 function addToBasket($product, $price){
 	session_start();
-	$_SESSION['basketItems'] = 1;
-	$_SESSION['product'] = $product;
+	$_SESSION['basketItems'] = new BasketItem($product, $price);
+	//$_SESSION['basketItems']->product = $product;
+	echo $_SESSION['basketItems']->product." at ".$_SESSION['basketItems']->price;
+	
+	/*$_SESSION['product'] = $product;
 	$_SESSION['price'] = $price;
-	echo $_SESSION['product'] . ' cost £' . $_SESSION['price'];
+	echo $_SESSION['product'] . ' cost £' . $_SESSION['price'];*/
 }
 
 function regNew() {
@@ -84,5 +87,15 @@ function dbconnect() {
 		return $conn;
 	} catch(PDOException $e){
 		echo "Connection failed: " . $e->getMessage();
+	}
+}
+
+class BasketItem {
+	public $product;
+	public $price;
+	
+	public function __construct($someProd, $somePrice){
+		$this->product = $someProd;
+		$this->price = $somePrice;
 	}
 }
