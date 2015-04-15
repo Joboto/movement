@@ -27,6 +27,8 @@
 				<input type="text" name="lname" id="lname" required/><br>
 				<label for="email" style="width:25%;text-align:left;">Email address</label><br>
 				<input type="email" name="email" id="email" required/><br>
+				<label for="username" style="width:50%;text-align:left;">Choose a unique User Name</label><br>
+				<input type="text" name="username" id="username" required/><br>
 				<label for="password" style="width:25%;text-align:left;">Create password</label><br>
 				<input type="password" name="password" id="password" placeholder="Password" required/><br>
 				<input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password"/><br>

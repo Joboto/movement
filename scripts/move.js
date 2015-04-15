@@ -12,12 +12,14 @@ function register(){
 		datatype: 'json',
 		success: function(){
 			alert('Welcome to the tribe!');
-			//redirect to profile page
+			alert('Please log in to view your profile.');	
+			document.location.href = "/movement";
 		},
 		error: function(data){
 			alert(data);
 		}
 	});
+	//document.location.href = "/movement";
 }
 
 function logmein(){
