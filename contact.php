@@ -15,7 +15,10 @@
 			<h1>MOVEMENT</h1>
 			<h4>Start yours...</h4>
 		</div></a>
-	<?php include '/includes/login.php';?>
+		<div id="topright">
+		<?php include '/includes/login.php';?>
+		<?php include '/includes/basket.php';?>
+		</div>
 	</div>
 	<div style="clear:both"></div>
 	<div id="main">
