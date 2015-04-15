@@ -8,7 +8,7 @@ $app->post('/getmember', 'grabamember');
 $app->post('/newmember', 'regNew');
 $app->get('/:product/:price', 'addToBasket');
 //$app->get('/:userName', 'newSession');
-//$app->get('/killsession', 'clearSession');
+$app->get('/killsession', 'clearSession');
 
 $app->run();
 
@@ -16,21 +16,25 @@ $app->run();
 	session_start();
 	$_SESSION['UserName'] = $userName;
 	echo $_SESSION['UserName'];
-}
+}*/
 
 function clearSession(){
-	session_unset();
-}*/
+	//session_unset();
+	//session_destroy();
+	$_SESSION['basketItems'] = null;
+	echo $_SESSION['basketItems'][0]->product." at ".$_SESSION['basketItems'][0]->price;
+}
 
 function addToBasket($product, $price){
 	session_start();
-	$_SESSION['basketItems'] = new BasketItem($product, $price);
-	//$_SESSION['basketItems']->product = $product;
-	echo $_SESSION['basketItems']->product." at ".$_SESSION['basketItems']->price;
+	$newItem = new BasketItem($product, $price);
+	/*if(!isset($_SESSION['basketItems']))
+		$_SESSION['basketItems'] = array();*/
+	//array_push($_SESSION['basketItems'], $newItem);
+	$_SESSION['basketItems'][] = $newItem;
+	$count = count($_SESSION['basketItems']);
+	echo $_SESSION['basketItems'][0]->product." added, ".$count."items in total.";
 	
-	/*$_SESSION['product'] = $product;
-	$_SESSION['price'] = $price;
-	echo $_SESSION['product'] . ' cost £' . $_SESSION['price'];*/
 }
 
 function regNew() {

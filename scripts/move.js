@@ -84,6 +84,16 @@ function addtobasket(item, price){
 	});
 }
 
+function clearsession(){
+	$.ajax({
+		url: "/movement/api/killsession",
+		success: function(string){
+			alert("Basket cleared");
+			alert(string);
+		}
+	});
+}
+
 $(document).ready(function(){
 	if(localStorage.getItem('loggedOn') !== null){
 		var currentuser = localStorage.getItem('loggedOn');
