@@ -90,11 +90,10 @@ function addtobasket(item, price){
 function clearsession(){
 	$.ajax({
 		url: "/movement/api/killsession",
-		success: function(string){
+		success: function(){
 			alert("Basket cleared");
-			alert(string);
-			$.get("../includes/basket.php", function(data){
-				$('#basketbox').html(data);
+			$.get("includes/thebasket.php", function(data){
+				$('#maincontainer').html(data);
 			});
 		}
 	});

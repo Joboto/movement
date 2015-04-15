@@ -9,5 +9,4 @@ if(!isset($_SESSION['basketItems'])) {
 }
 ?>
 	</a>
-<button type="button" onclick="clearsession()">Empty basket</button>
 </div>

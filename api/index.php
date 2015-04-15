@@ -21,20 +21,18 @@ $app->run();
 function clearSession(){
 	session_start();
 	session_unset();
-	//session_destroy();
-	//unset($_SESSION['basketItems']);
-	//echo count($_SESSION['basketItems']);
 }
 
 function addToBasket($product, $price){
+	include('../includes/BasketItem.php');
 	session_start();
 	$newItem = new BasketItem($product, $price);
 	if(!isset($_SESSION['basketItems'])) {
 		$_SESSION['basketItems'] = array();
 	}
-	$_SESSION['basketItems'][] = $newItem;
+	$_SESSION['basketItems'][] = serialize($newItem);
 	$count = count($_SESSION['basketItems']);
-	echo $_SESSION['basketItems'][0]->product." added, ".$count."items in total.";
+	//echo $_SESSION['basketItems'][0]->product." added, ".$count."items in total.";
 	
 }
 
@@ -95,7 +93,7 @@ function dbconnect() {
 	}
 }
 
-class BasketItem {
+/*class BasketItem {
 	public $product;
 	public $price;
 	
@@ -103,4 +101,4 @@ class BasketItem {
 		$this->product = $someProd;
 		$this->price = $somePrice;
 	}
-}
+}*/
