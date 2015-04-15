@@ -19,18 +19,19 @@ $app->run();
 }*/
 
 function clearSession(){
-	//session_unset();
+	session_start();
+	session_unset();
 	//session_destroy();
-	$_SESSION['basketItems'] = null;
-	echo $_SESSION['basketItems'][0]->product." at ".$_SESSION['basketItems'][0]->price;
+	//unset($_SESSION['basketItems']);
+	//echo count($_SESSION['basketItems']);
 }
 
 function addToBasket($product, $price){
 	session_start();
 	$newItem = new BasketItem($product, $price);
-	/*if(!isset($_SESSION['basketItems']))
-		$_SESSION['basketItems'] = array();*/
-	//array_push($_SESSION['basketItems'], $newItem);
+	if(!isset($_SESSION['basketItems'])) {
+		$_SESSION['basketItems'] = array();
+	}
 	$_SESSION['basketItems'][] = $newItem;
 	$count = count($_SESSION['basketItems']);
 	echo $_SESSION['basketItems'][0]->product." added, ".$count."items in total.";

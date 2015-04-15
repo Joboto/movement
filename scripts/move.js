@@ -80,6 +80,9 @@ function addtobasket(item, price){
 		url: "../api/"+newItem+"/"+itemPrice,
 		success: function(reply){
 			alert(reply);
+			$.get("../includes/basket.php", function(data){
+				$('#basketbox').html(data);
+			});
 		}
 	});
 }
@@ -90,6 +93,9 @@ function clearsession(){
 		success: function(string){
 			alert("Basket cleared");
 			alert(string);
+			$.get("../includes/basket.php", function(data){
+				$('#basketbox').html(data);
+			});
 		}
 	});
 }
