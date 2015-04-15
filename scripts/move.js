@@ -3,7 +3,6 @@ function gotoregpage(){
 }
 
 function register(){
-	//window.location = "../scripts/reg.php";
 	var formels = $('#registerForm').serialize();
 	var myurl = "../api/newmember";
 	$.ajax({
@@ -59,8 +58,6 @@ function logmeout(){
 }
 
 function whologgedon(){
-	//var saying = localStorage;
-	//alert(saying);
 	if(localStorage.getItem('loggedOn') === null){
 		alert("No-one logged in");
 	} else {
@@ -78,8 +75,7 @@ function addtobasket(item, price){
 	alert("Adding "+newItem+" to basket");
 	$.ajax({
 		url: "../api/"+newItem+"/"+itemPrice,
-		success: function(reply){
-			alert(reply);
+		success: function(){
 			$.get("../includes/basket.php", function(data){
 				$('#basketbox').html(data);
 			});

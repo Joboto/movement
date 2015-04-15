@@ -32,7 +32,6 @@ function addToBasket($product, $price){
 	}
 	$_SESSION['basketItems'][] = serialize($newItem);
 	$count = count($_SESSION['basketItems']);
-	//echo $_SESSION['basketItems'][0]->product." added, ".$count."items in total.";
 	
 }
 
@@ -93,12 +92,3 @@ function dbconnect() {
 	}
 }
 
-/*class BasketItem {
-	public $product;
-	public $price;
-	
-	public function __construct($someProd, $somePrice){
-		$this->product = $someProd;
-		$this->price = $somePrice;
-	}
-}*/
