@@ -7,6 +7,7 @@ $app = new \Slim\Slim();
 $app->post('/getmember', 'grabamember');
 $app->post('/newmember', 'regNew');
 $app->get('/:product/:price', 'addToBasket');
+$app->get('/:akey', 'removeFromBasket');
 //$app->get('/:userName', 'newSession');
 $app->get('/killsession', 'clearSession');
 
@@ -32,7 +33,11 @@ function addToBasket($product, $price){
 	}
 	$_SESSION['basketItems'][] = serialize($newItem);
 	$count = count($_SESSION['basketItems']);
-	
+}
+
+function removeFromBasket($akey){
+	session_start();
+	unset($_SESSION['basketItems'][$akey]);
 }
 
 function regNew() {

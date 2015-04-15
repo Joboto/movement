@@ -83,6 +83,18 @@ function addtobasket(item, price){
 	});
 }
 
+function discard(akey){
+	$.ajax({
+		url: "api/"+akey,
+		success: function(){
+			alert("Removing from basket.");
+			$.get("includes/thebasket.php", function(data){
+				$('#maincontainer').html(data);
+			});
+		}
+	});
+}
+
 function clearsession(){
 	$.ajax({
 		url: "/movement/api/killsession",

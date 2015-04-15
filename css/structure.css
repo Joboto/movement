@@ -2,8 +2,8 @@ body{background-image:url("../images/movMonkei.jpg");color:black;font-family:San
 #container{width:80%;margin:auto;}
 #header{width:100%;}
 #logo{float:left;background-color:black;color:white;width:30%;padding-left:5%;font-family:"Arial Black", Gadget, sans-serif;}
-#topright{float:right;font-size:75%;background:rgba(125,125,125,0.5);}
-#basketbox {padding:0 5% 0 5%;background:rgba(125,125,125,0.5);}
+#topright{float:right;font-size:75%;background:rgba(255,255,255,0.5);}
+#basketbox a{padding:0 0 0 5%;background:rgba(125,125,125,0.5);}
 #loginbox input{height:10px;width:50px}
 #navigation{float:left;width:20%;background-size:100% 100%;margin:5px 0 0 5px;background-color:#DADADA;color:black; }
 #navigation ul{list-style-type:none;}
@@ -19,6 +19,9 @@ a:link {color: black;text-decoration: underline;}/* unvisited link */
 a:visited {color: black;text-decoration:underline;}/* visited link */
 a:hover {color: white;text-decoration:underline;background-color: #000000;}/* mouse over link */
 a:active {color: black;text-decoration:underline;background-color: white;}/* selected link */
+table{border-collapse:separate;empty-cells:hide;}
+th{background:rgba(125,125,125,0.5);}
+#baskettable td:first-child{width:100%;border-collapse:separate;empty-cells:hide;}
 
 button {
 	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;

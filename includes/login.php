@@ -13,8 +13,8 @@
 			<input id="password" name="password" type="password" style="width:90%" />
 		</div>
 		<div style="clear:both"></div>
-		<button type="button" style="height:23px" onclick="logmein()">Log in</button>
-		<button type="button" style="height:23px" onclick="gotoregpage()">Register</button>
+		<button type="button" style="height:23px;font-size:100%;" onclick="logmein()">Log in</button>
+		<button type="button" style="height:23px;font-size:100%;" onclick="gotoregpage()">Register</button>
 	</form>
 </div>
 <div id="userbox">

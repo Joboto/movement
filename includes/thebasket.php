@@ -6,11 +6,22 @@ if(!isset($_SESSION['basketItems'])) {
 	echo 'Your basket is empty';
 } else {
 	$array = $_SESSION['basketItems'];
-	$list = "";
-	foreach ($array as $bitem) {
-		$item = unserialize($bitem);
-		$list .= '<li>'.$item->product.' '.$item->price.'</li>';
+	$sum = 0;
+	$table = '<table id="baskettable" style="border-collapse:separate;empty-cells:hide;">
+				<tr>
+					<th>Product</th><th>Price</th>
+				</tr>';
+	while(list($key, $val) = each($array)){
+		$item = unserialize($val);
+		$sum += $item->price;
+		$table .= '<tr><td>'.$item->product.'</td><td> &pound'.$item->price.'</td><td><button title="Remove from basket" onclick="discard('.$key.')">-</button></td></tr>';
 	}
-	echo '<p>There are ' . count($array) . ' items in your basket.</p>' . $list . '<button type="button" onclick="clearsession()">Empty basket</button>';
+	/*foreach ($array as $bitem) {
+		$item = unserialize($bitem);
+		$sum += $item->price;
+		$table .= '<tr><td>'.$item->product.' item '.$key.'</td><td> &pound'.$item->price.'</td><td><button title="Remove from basket" onclick="discard('.$bitem.')">-</button></td></tr>';
+	}*/
+	$table .= '<tr><td></td><td> &pound'.$sum.'</td></tr></table>';
+	echo $table . '<br><button type="button" onclick="clearsession()">Empty basket</button>';
 }
 ?>
