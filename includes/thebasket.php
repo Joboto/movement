@@ -18,6 +18,6 @@ if(!isset($_SESSION['basketItems'])) {
 	}
 	
 	$table .= '<tr><td></td><td> &pound'.$sum.'</td></tr></table>';
-	echo $table . '<br><button type="button" onclick="clearsession()">Empty basket</button>';
+	echo $table . '<br><button type="button" onclick="saveitems()">Purchase Items</button>';
 }
 ?>

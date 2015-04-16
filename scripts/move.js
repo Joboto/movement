@@ -149,6 +149,19 @@ function discard(akey){
 	});
 }
 
+function saveitems() {
+	$.ajax({
+		url: "api/purchase",
+		datatype: 'json',
+		success: function(value){
+			alert(value);
+		},
+		error: function(data){
+			console.log(data);
+		}
+	});
+}
+
 function clearsession(){
 	$.ajax({
 		url: "/movement/api/killsession",

@@ -10,6 +10,7 @@ $app->post('/updateme', 'updateMember');
 $app->get('/:product/:price', 'addToBasket');
 $app->get('/:akey', 'removeFromBasket');
 $app->get('/killsession', 'clearSession');
+$app->get('/purchase', 'transact');
 
 $app->run();
 
@@ -36,6 +37,17 @@ function addToBasket($product, $price){
 function removeFromBasket($akey){
 	session_start();
 	unset($_SESSION['basketItems'][$akey]);
+}
+
+function transact(){
+	include('../includes/BasketItem.php');
+	session_start();
+	/*$limit = count($_SESSION['basketItems']);
+	for ($loop = 0; $loop < $limit; $loop++){
+		$output = $_SESSION['basketItems'][$loop];
+	}
+	echo "".(unserialize($output))->product;*/
+	echo json_encode($_SESSION['basketItems'][0]);
 }
 
 function regNew() {
