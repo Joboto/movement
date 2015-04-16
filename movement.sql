@@ -1,19 +1,24 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.0.1
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Apr 15, 2015 at 08:49 AM
--- Server version: 5.1.36
--- PHP Version: 5.3.0
+-- Host: 127.0.0.1
+-- Generation Time: Apr 16, 2015 at 08:54 PM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `movement`
 --
-CREATE DATABASE `movement` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `movement`;
 
 -- --------------------------------------------------------
 
@@ -28,12 +33,32 @@ CREATE TABLE IF NOT EXISTS `members` (
   `bio` text NOT NULL,
   `pword` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
-  UNIQUE KEY `username` (`username`)
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `purchase_history`
+--
+
+CREATE TABLE IF NOT EXISTS `purchase_history` (
+  `product` varchar(50) NOT NULL,
+  `price` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `members`
+-- Constraints for dumped tables
 --
 
-INSERT INTO `members` (`fname`, `lname`, `email`, `bio`, `pword`, `username`) VALUES
-('Joe', 'Lear', 'joeisamonkey@yahoo.com', 'All about me', 'joe', 'jobot');
+--
+-- Constraints for table `purchase_history`
+--
+ALTER TABLE `purchase_history`
+  ADD CONSTRAINT `user_fk` FOREIGN KEY (`username`) REFERENCES `members` (`username`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
