@@ -26,7 +26,7 @@
 		<div id="maincontainer">
 			<h1>Equipment</h1>
 			<div  style="background-image:url(../images/ringsThumb.jpg);">
-			<div class="item">
+			<div class="item" onmouseover="clearBackground(this)">
 				<h2><a href="rings.php">Gymnastic Rings</a></h2>
 				<p>The ultimate upper-body strength training tool.</p>
 				<a href="rings.php">View full details.</a>

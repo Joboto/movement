@@ -6,8 +6,8 @@ function gotoprofile(){
 	document.location.href = "/movement/account/profile.php";
 }
 
-function checkIfValid() {
-	var form = document.querySelector('#registerForm');
+function checkIfValid(input) {
+	var form = document.querySelector('#detailsForm');
 	if(!form.checkValidity()){
 		var message = "The following are required fields: ";
 		var emptyfields = false;
@@ -22,12 +22,16 @@ function checkIfValid() {
 		}
 		alert(message);
 	} else {
-		register();
+		if(input == "register"){
+			register();
+		} else {
+			updateprofile();
+		}
 	}
 };
 
 function register(){
-	var formels = $('#registerForm').serialize();
+	var formels = $('#detailsForm').serialize();
 	var myurl = "../api/newmember";
 	$.ajax({
 		url: myurl,
@@ -96,7 +100,7 @@ function getdetails(){
 }
 
 function updateprofile(){
-	var formels = $('#updateForm').serialize();
+	var formels = $('#detailsForm').serialize();
 	var user = JSON.parse(localStorage.getItem('loggedOn'));
 	var myurl = "../api/updateme";
 	$.ajax({
@@ -171,3 +175,12 @@ $(document).ready(function(){
 		userbox.style.display = "none";
 	}
 })
+
+$(document).ready(function(){
+	$(".item").mouseover(function(){
+		this.style.background = 'rgba(255,255,255,0)';
+	});
+	$(".item").mouseout(function(){
+		this.style.background = 'rgba(255,255,255,0.5)';
+	});
+});
