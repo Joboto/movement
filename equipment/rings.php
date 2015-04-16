@@ -26,12 +26,14 @@
 		<div id="maincontainer">
 			<div class="item">
 				<h1>Gymnastic Rings</h1>
-				<p>The 1.11" FIG Wood Rings meet the FIG (Federation International Gymnastics) standards.  Includes a pair of 1.11" Wood Rings and marked straps.<br>
-				Ring thickness:1.11" (Gymnastic standard)<br>
-				Ring weight: 9.5oz<br>
-				Outer Diameter: 23.5cm (9.25 inches)<br>
-				Length of Straps: 18'<br>
-				Width of Straps: 1.5"</p>
+				<p>The 1.11" FIG Wood Rings meet the FIG (Federation International Gymnastics) standards.  Includes a pair of 1.11" Wood Rings and marked straps.</p>
+				<ul>
+				<li>Ring thickness:1.11" (Gymnastic standard)</li>
+				<li>Ring weight: 9.5oz</li>
+				<li>Outer Diameter: 23.5cm (9.25 inches)</li>
+				<li>Length of Straps: 18'</li>
+				<li>Width of Straps: 1.5"</li>
+				</ul>
 				<img src="../images/ringsThumb.jpg" style="max-width:100%">
 				<p>&pound;55.00</p>
 				<button type="button" onclick="addtobasket('Gymnastic Rings', 55)">Add to Basket</button>

@@ -24,34 +24,18 @@
 	<div id="main">
 		<?php include '../includes/navigation.php';?>
 		<div id="maincontainer">
-			<h1>Equipment</h1>
-			<div  style="background-image:url(../images/ringsThumb.jpg);">
 			<div class="item">
-				<h2><a href="rings.php">Gymnastic Rings</a></h2>
-				<p>The ultimate upper-body strength training tool.</p>
-				<a href="rings.php">View full details.</a>
+				<h1>Lacrosse Balls</h1>
+				<p>If there's one thing you should implement to increase mobility, it's a lacrosse ball. It's great for breaking up muscle knots and hard to reach trigger points. Use the Lacrosse ball on your traps and delts after a heavy upper body workout or on glutes and calves after a long run.</p>
+				<ul>
+				<li>Weight: 5 oz.</li>
+				<li>Diameter: 2.54"</li>
+				<li>Material: Rubber</li>
+				</ul>
+				<img src="../images/voodooFloss.jpg" style="max-width:100%">
+				<p>&pound;24.00 per pair</p>
+				<button type="button" onclick="addtobasket('Lacrosse Balls', 3.99)">Add to Basket</button>
 			</div>
-			</div>
-			<div style="clear:both"></div>
-			
-			<div  style="background-image:url(../images/voodooFloss.jpg);">
-			<div class="item">
-				<h2><a href="voodoo.php">Voodoo Floss</a></h2>
-				<p>One of the best recovery tools.</p>
-				<a href="voodoo.php">View full details.</a>
-			</div>
-			</div>
-			<div style="clear:both"></div>
-			
-			<div  style="background-image:url(../images/lacrosseBalls.jpg);">
-			<div class="item">
-				<h2><a href="lacrosse.php">lacrosse Balls</a></h2>
-				<p>The simplest way to increase mobility.</p>
-				<a href="lacrosse.php">View full details.</a>
-			</div>
-			</div>
-			
-		</div>
 	</div>
 	<div style="clear:both"></div>
 	<footer id="footer">

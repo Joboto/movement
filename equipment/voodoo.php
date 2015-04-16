@@ -24,34 +24,19 @@
 	<div id="main">
 		<?php include '../includes/navigation.php';?>
 		<div id="maincontainer">
-			<h1>Equipment</h1>
-			<div  style="background-image:url(../images/ringsThumb.jpg);">
 			<div class="item">
-				<h2><a href="rings.php">Gymnastic Rings</a></h2>
-				<p>The ultimate upper-body strength training tool.</p>
-				<a href="rings.php">View full details.</a>
+				<h1>Voodoo Floss</h1>
+				<p>The Voodoo Floss Band is an essential performance tool and should be a staple in the gym bag of every athlete looking to improve range, restore joint mechanics, or unglue matted down or previously injured tissue.  Compression tack and flossing (Voodoo Flossing) works on many levels; including re-perfusing tissues that have become stiff or gone cold after injury, and by compressing swelling out of tissues and joints.</p>
+				<ul>
+				<li>Length: 7' (Gymnastic standard)</li>
+				<li>Width: 2"</li>
+				<li>Material: Natrual Latex Rubber</li>
+				<li>Max Stretch: 150% of length</li>
+				</ul>
+				<img src="../images/voodooFloss.jpg" style="max-width:100%">
+				<p>&pound;24.00</p>
+				<button type="button" onclick="addtobasket('Voodoo Floss', 24)">Add to Basket</button>
 			</div>
-			</div>
-			<div style="clear:both"></div>
-			
-			<div  style="background-image:url(../images/voodooFloss.jpg);">
-			<div class="item">
-				<h2><a href="voodoo.php">Voodoo Floss</a></h2>
-				<p>One of the best recovery tools.</p>
-				<a href="voodoo.php">View full details.</a>
-			</div>
-			</div>
-			<div style="clear:both"></div>
-			
-			<div  style="background-image:url(../images/lacrosseBalls.jpg);">
-			<div class="item">
-				<h2><a href="lacrosse.php">lacrosse Balls</a></h2>
-				<p>The simplest way to increase mobility.</p>
-				<a href="lacrosse.php">View full details.</a>
-			</div>
-			</div>
-			
-		</div>
 	</div>
 	<div style="clear:both"></div>
 	<footer id="footer">
