@@ -14,9 +14,9 @@ function register(){
 		type: 'POST',
 		data: formels,
 		datatype: 'json',
-		success: function(){
+		success: function(obj){
 			alert('Welcome to the tribe!');
-			alert('Please log in to view your profile.');	
+			localStorage.setItem('loggedOn', obj);
 			document.location.href = "/movement";
 		},
 		error: function(data){

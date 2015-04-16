@@ -48,7 +48,6 @@ function regNew() {
 	$uname = $_POST['username'];
 	$pword = $_POST['password'];
 	$bio = $_POST['bio'];
-	//echo json_encode(array("First"=>$fname,"Last"=>$lname,"email"=>$email,"bio"=>$bio));
 	$sql = "INSERT INTO members (fname, lname, email, pword, username, bio) VALUES (:fname, :lname, :email, :uname, :pword, :bio)";
 	$conn = dbconnect();
 	try {
@@ -60,6 +59,7 @@ function regNew() {
 		$stmt->bindParam("pword", $pword);
 		$stmt->bindParam("bio", $bio);
 		$stmt->execute();
+		echo json_encode(array("fname"=>$fname,"lname"=>$lname,"email"=>$email,"bio"=>$bio,"username"=>$uname),JSON_FORCE_OBJECT);
 	} catch(PDOException $e) {
 		echo "Connection failed: " . $e->getMessage();
 	}
