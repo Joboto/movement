@@ -6,6 +6,26 @@ function gotoprofile(){
 	document.location.href = "/movement/account/profile.php";
 }
 
+function checkIfValid() {
+	var form = document.querySelector('#registerForm');
+	if(!form.checkValidity()){
+		var message = "The following are required fields: ";
+		var emptyfields = false;
+		for(var loop = 0; loop < form.length; loop++) {
+			if(form[loop].validity.valueMissing){
+				message += form[loop].placeholder+" ";
+				emptyfields = true;
+			}
+		} 
+		if (form.email.validity.typeMismatch && !emptyfields) {
+			message = "Email must of form: example@domain.whatever";
+		}
+		alert(message);
+	} else {
+		register();
+	}
+};
+
 function register(){
 	var formels = $('#registerForm').serialize();
 	var myurl = "../api/newmember";
