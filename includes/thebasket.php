@@ -16,11 +16,7 @@ if(!isset($_SESSION['basketItems'])) {
 		$sum += $item->price;
 		$table .= '<tr><td>'.$item->product.'</td><td> &pound'.$item->price.'</td><td><button title="Remove from basket" onclick="discard('.$key.')">-</button></td></tr>';
 	}
-	/*foreach ($array as $bitem) {
-		$item = unserialize($bitem);
-		$sum += $item->price;
-		$table .= '<tr><td>'.$item->product.' item '.$key.'</td><td> &pound'.$item->price.'</td><td><button title="Remove from basket" onclick="discard('.$bitem.')">-</button></td></tr>';
-	}*/
+	
 	$table .= '<tr><td></td><td> &pound'.$sum.'</td></tr></table>';
 	echo $table . '<br><button type="button" onclick="clearsession()">Empty basket</button>';
 }

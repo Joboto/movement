@@ -9,20 +9,17 @@ $app->post('/newmember', 'regNew');
 $app->post('/updateme', 'updateMember');
 $app->get('/:product/:price', 'addToBasket');
 $app->get('/:akey', 'removeFromBasket');
-//$app->get('/:userName', 'newSession');
 $app->get('/killsession', 'clearSession');
 
 $app->run();
 
-/*function newSession($userName){
-	session_start();
-	$_SESSION['UserName'] = $userName;
-	echo $_SESSION['UserName'];
-}*/
 
 function clearSession(){
-	session_start();
+	//session_start();
 	session_unset();
+	session_destroy();
+	unset($_SESSION['basketItems']);
+	session_start();
 }
 
 function addToBasket($product, $price){
