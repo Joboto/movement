@@ -21,16 +21,16 @@
 		<?php include '../includes/navigation.php';?>
 		<div id="maincontainer">
 			<h3>Please make any changes below</h3>
-			<form id="updateForm" method="post">
+			<form id="detailsForm" method="post">
 				<label for="fname" style="width:25%;text-align:left;">First Name</label><br>
-				<input type="text" name="fname" id="fname" required/><br>
+				<input type="text" name="fname" id="fname" placeholder="First Name" required/><br>
 				<label for="lname" style="width:25%;text-align:left;">Last Name</label><br>
-				<input type="text" name="lname" id="lname" required/><br>
+				<input type="text" name="lname" id="lname" placeholder="Surname" required/><br>
 				<label for="email" style="width:25%;text-align:left;">Email address</label><br>
-				<input type="email" name="email" id="email" required/><br>
+				<input type="email" name="email" id="email" placeholder="Email" required/><br>
 				<label for="bio" style="width:50%;text-align:left;">All about you...</label><br>
 				<textarea name="bio" id ="bio" maxlength="1000" cols="50" rows="10"></textarea><br>
-				<button type="button" onclick="updateprofile()">update</button>
+				<button type="button" onclick="checkIfValid('update')">update</button>
 			</form>
 			<div id="notLoggedin">
 				<p>You are not logged in.</p>
