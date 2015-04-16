@@ -17,7 +17,8 @@
 		<button type="button" style="height:23px;font-size:100%;" onclick="gotoregpage()">Register</button>
 	</form>
 </div>
-<div id="userbox">
-	<h3 style="margin:0">You are logged in as <span id="currentfname"></span></h3>
+<div id="userbox" style="border:1px solid white;">
+	<h2 style="margin:2px;background:rgba(125,125,125,0.5);color:white;">You are logged in as <span id="currentfname"></span></h2>
+	<button type="button" style="height:23px" onclick="gotoprofile()">View Profile</button>
 	<button type="button" style="height:23px" onclick="logmeout()">Log out</button>
 </div>

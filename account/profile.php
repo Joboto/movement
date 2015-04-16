@@ -20,22 +20,21 @@
 	<div id="main">
 		<?php include '../includes/navigation.php';?>
 		<div id="maincontainer">
-			<form id="registerForm" method="post">
+			<h3>Please make any changes below</h3>
+			<form id="updateForm" method="post">
 				<label for="fname" style="width:25%;text-align:left;">First Name</label><br>
 				<input type="text" name="fname" id="fname" required/><br>
 				<label for="lname" style="width:25%;text-align:left;">Last Name</label><br>
 				<input type="text" name="lname" id="lname" required/><br>
 				<label for="email" style="width:25%;text-align:left;">Email address</label><br>
 				<input type="email" name="email" id="email" required/><br>
-				<label for="username" style="width:50%;text-align:left;">Choose a unique User Name</label><br>
-				<input type="text" name="username" id="username" required/><br>
-				<label for="password" style="width:25%;text-align:left;">Create password</label><br>
-				<input type="password" name="password" id="password" placeholder="Password" required/><br>
-				<input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password"/><br>
-				<label for="bio" style="width:50%;text-align:left;">Tell us a little bit about yourself...</label><br>
+				<label for="bio" style="width:50%;text-align:left;">All about you...</label><br>
 				<textarea name="bio" id ="bio" maxlength="1000" cols="50" rows="10"></textarea><br>
-				<button type="button" onclick="register()">Submit</button>
+				<button type="button" onclick="updateprofile()">update</button>
 			</form>
+			<div id="notLoggedin">
+				<p>You are not logged in.</p>
+			</div>
 		</div>
 	</div>
 	<div style="clear:both"></div>
@@ -43,7 +42,15 @@
 		<?php include '../includes/footer.php';?>
 	</footer>
 </div>
-
-
+<script>
+	if(localStorage.getItem('loggedOn') !== null){
+		var notlogged = document.querySelector("#notLoggedin");
+		notlogged.style.display = "none";
+		getdetails();
+	} else {
+		var updateform = document.querySelector("#updateForm");
+		updateform.style.display = "none";
+	}
+</script>
 </body>
 </html>

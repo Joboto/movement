@@ -2,6 +2,10 @@ function gotoregpage(){
 	document.location.href = "/movement/account/register.php";
 }
 
+function gotoprofile(){
+	document.location.href = "/movement/account/profile.php";
+}
+
 function register(){
 	var formels = $('#registerForm').serialize();
 	var myurl = "../api/newmember";
@@ -19,7 +23,6 @@ function register(){
 			alert(data);
 		}
 	});
-	//document.location.href = "/movement";
 }
 
 function logmein(){
@@ -59,16 +62,41 @@ function logmeout(){
 	alert("You are no longer logged in.");
 }
 
-function whologgedon(){
+function getdetails(){
 	if(localStorage.getItem('loggedOn') === null){
 		alert("No-one logged in");
 	} else {
-		var thisone = localStorage.getItem('loggedOn');
-		alert("You are "+(JSON.parse(thisone)).fname);
-		console.log(JSON.parse(thisone));
-		$('#marker').append("<p>"+(JSON.parse(thisone)).fname+"</p>");
+		var loggedOn = JSON.parse(localStorage.getItem('loggedOn'));
+		$("#fname").val(loggedOn.fname);
+		$("#lname").val(loggedOn.lname);
+		$("#email").val(loggedOn.email);
+		$("#bio").val(loggedOn.bio);
 	}
 	
+}
+
+function updateprofile(){
+	var formels = $('#updateForm').serialize();
+	var user = JSON.parse(localStorage.getItem('loggedOn'));
+	var myurl = "../api/updateme";
+	$.ajax({
+		url: myurl,
+		type: 'POST',
+		data: formels+'&username='+user.username,
+		datatype: 'json',
+		success: function(output){
+			alert('Update successful');
+			var update = JSON.parse(output);
+			user.fname = update.First;
+			user.lname = update.Last;
+			user.email = update.email;
+			user.bio = update.bio;
+			localStorage.setItem('loggedOn', JSON.stringify(user));
+		},
+		error: function(data){
+			alert(data);
+		}
+	});
 }
 
 function addtobasket(item, price){

@@ -6,6 +6,7 @@ $app = new \Slim\Slim();
  
 $app->post('/getmember', 'grabamember');
 $app->post('/newmember', 'regNew');
+$app->post('/updateme', 'updateMember');
 $app->get('/:product/:price', 'addToBasket');
 $app->get('/:akey', 'removeFromBasket');
 //$app->get('/:userName', 'newSession');
@@ -82,6 +83,29 @@ function grabamember() {
 		echo "Connection failed: " . $e->getMessage();
 	}
 	//echo json_encode(array("Email"=>$email,"Password"=>$pword));
+}
+
+function updateMember() {
+	$user = $_POST['username'];
+	$fname = $_POST['fname'];
+	$lname = $_POST['lname'];
+	$email = $_POST['email'];
+	$bio = $_POST['bio'];
+	$sql = "UPDATE members SET fname=:fname,lname=:lname,email=:email,bio=:bio WHERE username=:user";
+	$conn = dbconnect();
+	try {
+		$stmt = $conn->prepare($sql);
+		$stmt->bindParam("fname", $fname);
+		$stmt->bindParam("lname", $lname);
+		$stmt->bindParam("email", $email);
+		$stmt->bindParam("bio", $bio);
+		$stmt->bindParam("user", $user);
+		$stmt->execute();
+		echo json_encode(array("First"=>$fname,"Last"=>$lname,"email"=>$email,"bio"=>$bio));
+	} catch(PDOException $e) {
+		echo "Connection failed: " . $e->getMessage();
+	}
+	$conn = null;
 }
 
 function dbconnect() {

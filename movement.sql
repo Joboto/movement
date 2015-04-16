@@ -36,4 +36,4 @@ CREATE TABLE IF NOT EXISTS `members` (
 --
 
 INSERT INTO `members` (`fname`, `lname`, `email`, `bio`, `pword`, `username`) VALUES
-('Joe', 'Lear', 'joeisamonkey@yahoo.com', 'All about me', 'joe', '');
+('Joe', 'Lear', 'joeisamonkey@yahoo.com', 'All about me', 'joe', 'jobot');
